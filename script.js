@@ -1,6 +1,7 @@
 //////////////////////Quiz Game\\\\\\\\\\\\\\\\\\\\\
 
-var count = 0, result;
+(function() {
+    var count = 0, result;
 var i = Math.floor(Math.random()*3);
         var question0 = {
         question:'A little girl kicks a soccer ball. It goes 10 feet and comes back to her. How is this possible?',
@@ -14,14 +15,17 @@ var i = Math.floor(Math.random()*3);
             console.log('Correct!');
             count++;
             console.log('Your score: '+count+' pts');
+            console.log('---------------------------------');
             correctA = true;
         } else if(result === 'EXIT'){
             correctA = false;
             i = -1; 
         } else if(result !== this.solution){
             console.log('Incorrect!');
+            console.log('Your current score: '+count+' pts');
+            console.log('---------------------------------');
             correctA = false;
-            i = -1;
+            count = 0;
         } else {
             correctA = false;
             i = -1;
@@ -88,5 +92,6 @@ var i = Math.floor(Math.random()*3);
             console.log(quesNum.answer2);
             console.log(quesNum.answer3);
 }
+})();
 
 /////////////////////COMPLETED\\\\\\\\\\\\\\\\\\\\\\\\
